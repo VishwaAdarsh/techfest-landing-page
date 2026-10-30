@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-midnight: #050B18;
+    --bg-navy: #0B1D38;
+    --primary-blue: #087CFF;
+    --electric-cyan: #00D9FF;
+    --secondary-violet: #765BFF;
+    --text-white: #F5F8FF;
+    --text-muted: #91A5C2;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #050B18;
+    color: #F5F8FF;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #050B18;
+    overflow-x: hidden;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(8, 124, 255, 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 60%, rgba(0, 217, 255, 0.05), transparent),
+      radial-gradient(ellipse 70% 50% at 10% 80%, rgba(118, 91, 255, 0.06), transparent);
+  }
+
+  ::selection {
+    background-color: #00D9FF;
+    color: #050B18;
+  }
+}
+
+/* =========================================================================
+   PREMIUM MULTI-FONT TYPOGRAPHY SYSTEM
+   ========================================================================= */
+
+/* 1. Monumental Condensed Display (Hero and Giant Festival Titles) */
+.font-monument {
+  font-family: 'Oswald', 'Syne', sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* 2. Modern Tech Editorial Display (Section Headers) */
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+/* 3. Futuristic Subheading Typography (Card Titles, Badges) */
+.font-heading {
+  font-family: 'Sora', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* 4. Silky Editorial Body Text (Paragraphs, Briefings) */
+.font-body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* 5. Precision Mathematical Telemetry (Coordinates, Metrics, Timers) */
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Fluid responsive clamp headlines with optical alignment */
+.headline-hero {
+  font-size: clamp(3.25rem, 9.5vw, 8.5rem);
+  line-height: 0.90;
+  letter-spacing: -0.01em;
+}
+
+.headline-section {
+  font-size: clamp(2.2rem, 5vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+/* Text balance utility */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Subtle Technical Cyber Grid Pattern */
+.cyber-grid {
+  background-size: 3.5rem 3.5rem;
+  background-image: 
+    linear-gradient(to right, rgba(0, 217, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 124, 255, 0.035) 1px, transparent 1px);
+}
+
+/* Cyber image filter for subtle blue tone */
+.cyber-image-grade {
+  filter: contrast(110%) brightness(95%);
+}
+
+/* Infinite Marquee Animation for Technical Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Scrollbar customization */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+}
